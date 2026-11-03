@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LogMeIn Hamachi VPN 2.4.0.79 Download for Windows 10/11</title>
+<meta name="description" content="Download LogMeIn Hamachi 2.4.0.79 for Windows 10 and 11. Official vendor MSI (14.1 MB), SHA-256 checksum, silent install flags and virtual LAN setup steps.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="LogMeIn Hamachi VPN 2.4.0.79 Download for Windows 10/11">
+<meta property="og:description" content="LogMeIn Hamachi VPN for Windows 10/11 — vendor MSI, SHA-256 checksum, silent install and virtual LAN setup.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<h1>LogMeIn Hamachi VPN 2.4.0.79 Download for Windows 10/11</h1>
+<p class="sub">Hosted VPN that builds a virtual LAN between machines — no port forwarding, no router configuration.</p>
+
+<a class="cta" href="https://secure.logmein.com/hamachi.msi" rel="noopener">Download 2.4.0.79 &middot; 14.1 MB</a>
+
+<dl class="meta">
+  <dt>Current version</dt><dd><strong>2.4.0.79</strong></dd>
+  <dt>File</dt><dd><code>hamachi.msi</code> &middot; 14,761,984 bytes</dd>
+  <dt>Published</dt><dd>2026-10-01 (vendor CDN)</dd>
+  <dt>Platform</dt><dd>Windows 10 / 11, Windows Server</dd>
+  <dt>Vendor</dt><dd><a href="https://vpn.net/" rel="noopener">vpn.net (LogMeIn)</a></dd>
+</dl>
+
+<h2>Download</h2>
+<p>The installer is served from LogMeIn's CDN. This page does not re-host the binary.</p>
+<ul>
+  <li>MSI: <a href="https://secure.logmein.com/hamachi.msi" rel="noopener">secure.logmein.com/hamachi.msi</a></li>
+  <li>ZIP: <a href="https://secure.logmein.com/LogMeInHamachi.zip" rel="noopener">secure.logmein.com/LogMeInHamachi.zip</a></li>
+  <li>Vendor page: <a href="https://vpn.net/" rel="noopener">vpn.net</a></li>
+</ul>
+
+<h2>Works with</h2>
+<ul>
+  <li><strong>Windows 10 / 11 / Server</strong> — MSI installer, x64</li>
+  <li><strong>LAN games</strong> — titles that only see the local network</li>
+  <li><strong>SMB file sharing</strong> — <code>\\25.x.x.x</code> shares between peers</li>
+  <li><strong>Remote Desktop</strong> — RDP to a peer's Hamachi address</li>
+  <li><strong>IP cameras and lab gear</strong> — devices with no public IP</li>
+  <li><strong>Gateway mode</strong> — route a whole subnet via one peer (paid plans)</li>
+</ul>
+
+<h2>SHA-256 checksum</h2>
+<pre>5c672c9a12b69b75b2cf25710bac8c579b3ef7ed1a907930dc0d7e20eab7584d  hamachi.msi</pre>
+<p>Verify on Windows:</p>
+<pre>Get-FileHash .\hamachi.msi -Algorithm SHA256</pre>
+<p>A mismatch means the file is not the build the vendor currently serves — delete it and download again from <code>secure.logmein.com</code>.</p>
+
+<div class="note">
+  <strong>Why the file is not hosted here.</strong> A re-hosted installer cannot be traced back to the vendor, and the checksum stops being meaningful. Every link on this page goes to LogMeIn's own CDN, so the hash above always describes the file you are about to run.
+</div>
+
+<h2>Install</h2>
+<p>Full walk-through with silent-install flags: <a href="/hamachi-download/install/">how to install Hamachi</a>.</p>
+<ol>
+  <li>Download <code>hamachi.msi</code> from <code>secure.logmein.com</code>.</li>
+  <li>Verify the SHA-256 (above).</li>
+  <li>Run the installer — administrator rights are required.</li>
+  <li>Sign in with a LogMeIn account.</li>
+  <li>Create a network, or join one with an ID and password.</li>
+</ol>
+
+<h3>Silent install</h3>
+<pre>msiexec /i hamachi.msi /qn</pre>
+
+<h2>Joining a network</h2>
+<p>Network IDs, gateway mode and troubleshooting: <a href="/hamachi-download/network-setup/">create or join a network</a>.</p>
+<ol>
+  <li>On the machine that will host: <strong>Network → Create new network</strong>, set an ID and password.</li>
+  <li>On the second machine: <strong>Network → Join existing network</strong>, paste the ID, enter the password.</li>
+  <li>Each peer receives a <code>25.x.x.x</code> address — use it the way you would use a LAN IP.</li>
+</ol>
+
+<h2>Frequently asked questions</h2>
+<h3>Is Hamachi free?</h3>
+<p>There is a free tier limited to 5 devices in a network. Paid plans raise the limit and enable gateway features.</p>
+<h3>Do I need a LogMeIn account?</h3>
+<p>Yes — an account is required to create or join networks.</p>
+<h3>Does it need port forwarding?</h3>
+<p>No. Connections are brokered through LogMeIn's relays, with direct peer-to-peer when NAT allows it.</p>
+<h3>Windows only?</h3>
+<p>LogMeIn also publishes macOS and Linux builds on the vendor site. This page covers the Windows MSI.</p>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+
+<footer>
+  Download links point to the vendor's own distribution endpoints. Last checked 2026-11-02.
+</footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Hamachi",
+      "alternateName": "LogMeIn Hamachi",
+      "applicationCategory": "SecurityApplication",
+      "applicationSubCategory": "VPN",
+      "operatingSystem": "Windows 10, Windows 11, Windows Server",
+      "softwareVersion": "2.4.0.79",
+      "fileSize": "14.762 MB",
+      "datePublished": "2026-10-01",
+      "downloadUrl": "https://secure.logmein.com/hamachi.msi",
+      "softwareHelp": "https://vpn.net/",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Is Hamachi free?",
+         "acceptedAnswer": {"@type": "Answer", "text": "There is a free tier limited to 5 devices in a network. Paid plans raise the limit and enable gateway features."}},
+        {"@type": "Question", "name": "Do I need a LogMeIn account?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes. An account is required to create or join networks."}},
+        {"@type": "Question", "name": "Does Hamachi need port forwarding?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Connections are brokered through LogMeIn relays, with direct peer-to-peer when NAT allows it."}}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

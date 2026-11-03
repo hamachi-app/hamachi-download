@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Hamachi 2.4.0.79 on Windows — Step by Step</title>
+<meta name="description" content="Step-by-step Hamachi 2.4.0.79 installation on Windows 10 and 11: MSI requirements, silent install flags, first sign-in and uninstall.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/install/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install Hamachi 2.4.0.79 on Windows — Step by Step">
+<meta property="og:description" content="Step-by-step Hamachi 2.4.0.79 installation on Windows 10 and 11: MSI requirements, silent install flags, first sign-in and uninstall.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/install/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="crumbs"><a href="/hamachi-download/">Hamachi download</a> / Install</nav>
+<h1>How to install Hamachi on Windows</h1>
+<p class="sub">MSI installer, administrator rights, silent flags and the first launch.</p>
+
+<h2>Before you start</h2>
+<ul>
+  <li><strong>Administrator rights.</strong> The MSI writes to <code>Program Files</code> and registers a service.</li>
+  <li><strong>Windows 10 / 11 / Server</strong>, x64. The vendor also ships macOS and Linux builds, but this page covers the Windows MSI.</li>
+  <li><strong>A LogMeIn account.</strong> You cannot create or join a network without one.</li>
+  <li><strong>The installer from the vendor CDN.</strong> <a href="https://secure.logmein.com/hamachi.msi" rel="noopener">secure.logmein.com/hamachi.msi</a> — 14,761,984 bytes (14.1 MB).</li>
+</ul>
+
+<h2>Verify the file first</h2>
+<p>Compare the SHA-256 before running anything. The full procedure is on the <a href="/hamachi-download/sha256/">checksum page</a>, and the expected value is:</p>
+<pre>5c672c9a12b69b75b2cf25710bac8c579b3ef7ed1a907930dc0d7e20eab7584d  hamachi.msi</pre>
+
+<h2>Step by step</h2>
+<ol>
+  <li>Download <code>hamachi.msi</code> from <code>secure.logmein.com</code>.</li>
+  <li>Right-click the file → <strong>Install</strong>, or double-click it. Accept the elevation prompt.</li>
+  <li>Follow the wizard. The default install location is fine for a single-user machine.</li>
+  <li>Launch <strong>LogMeIn Hamachi</strong> from the Start menu.</li>
+  <li>Sign in with your LogMeIn account, or create one.</li>
+  <li>Create a network, or join one with an ID and password — see <a href="/hamachi-download/network-setup/">network setup</a>.</li>
+</ol>
+<p>After sign-in the client shows your machine with a <code>25.x.x.x</code> address. That address is what peers use, exactly like a LAN IP.</p>
+
+<h2>Silent install</h2>
+<p>For a scripted roll-out across several machines:</p>
+<pre>msiexec /i hamachi.msi /qn</pre>
+<table>
+  <thead><tr><th>Flag</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td><code>/qn</code></td><td>No UI at all. Use <code>/qb</code> for a basic progress bar.</td></tr>
+    <tr><td><code>/norestart</code></td><td>Never reboot automatically.</td></tr>
+    <tr><td><code>/l*v install.log</code></td><td>Verbose log — the first thing to read when a silent install fails.</td></tr>
+    <tr><td><code>TARGETDIR="D:\Hamachi"</code></td><td>Non-default install location.</td></tr>
+  </tbody>
+</table>
+<p>Exit code <code>0</code> means success. <code>3010</code> means success but a reboot is pending. <code>1618</code> means another installation is already running — wait and retry. <code>1603</code> is a fatal error; the log above tells you which step failed.</p>
+
+<h2>Uninstall</h2>
+<p>Settings → Apps → Installed apps → <strong>LogMeIn Hamachi</strong> → Uninstall. From a command line: <code>msiexec /x hamachi.msi /qn</code>. Leave the network on the account first if other peers still depend on it.</p>
+
+<div class="note"><strong>Next:</strong> <a href="/hamachi-download/network-setup/">create or join a network</a> · <a href="/hamachi-download/virtual-lan/">what a virtual LAN is</a></div>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+<footer>
+  <p>Hamachi 2.4.0.79 · Windows MSI · SHA-256 5c672c9a… · <a href="/hamachi-download/">download page</a></p>
+</footer>
+</div>
+</body>
+</html>

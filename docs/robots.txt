@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hamachi-app.github.io/hamachi-download/sitemap.xml

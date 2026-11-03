@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify the Hamachi MSI SHA-256 Checksum</title>
+<meta name="description" content="Verify the Hamachi installer before running it: the expected SHA-256 for 2.4.0.79 and three ways to compute it on Windows.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/sha256/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="Verify the Hamachi MSI SHA-256 Checksum">
+<meta property="og:description" content="Verify the Hamachi installer before running it: the expected SHA-256 for 2.4.0.79 and three ways to compute it on Windows.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/sha256/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="crumbs"><a href="/hamachi-download/">Hamachi download</a> / SHA-256</nav>
+<h1>Verify the Hamachi installer</h1>
+<p class="sub">One hash, three commands, ten seconds — and you know the file is the vendor's build.</p>
+
+<h2>The expected value</h2>
+<p>For <code>hamachi.msi</code> as currently served by LogMeIn's CDN:</p>
+<pre>5c672c9a12b69b75b2cf25710bac8c579b3ef7ed1a907930dc0d7e20eab7584d  hamachi.msi</pre>
+<p>Size: 14,761,984 bytes (14.1 MB). Published: 2026-10-01 (vendor CDN <code>Last-Modified</code>).</p>
+
+<h2>PowerShell</h2>
+<pre>Get-FileHash .\hamachi.msi -Algorithm SHA256</pre>
+
+<h2>Command prompt</h2>
+<pre>certutil -hashfile hamachi.msi SHA256</pre>
+
+<h2>7-Zip</h2>
+<pre>7z h -scrcsha256 hamachi.msi</pre>
+
+<h2>Reading the result</h2>
+<p>Compare the hex string, not the file name. Hashes are case-insensitive. If your value differs:</p>
+<ul>
+  <li>the download was truncated or corrupted — download again;</li>
+  <li>the vendor published a new build — check the <a href="/hamachi-download/changelog/">version history</a> and compare the version in the file name;</li>
+  <li>the file came from somewhere other than <code>secure.logmein.com</code> — delete it and take it from the vendor.</li>
+</ul>
+
+<h2>Why this page does not host the installer</h2>
+<p>A re-hosted copy cannot be traced back to the vendor, and a checksum published next to a re-hosted file only proves that the re-host copied it faithfully. Every link here points at LogMeIn's own CDN, so the hash above always describes the file you are about to run.</p>
+
+<div class="note"><strong>Next:</strong> <a href="/hamachi-download/install/">install it</a> · <a href="/hamachi-download/changelog/">version history</a></div>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+<footer>
+  <p>Hamachi 2.4.0.79 · Windows MSI · SHA-256 5c672c9a… · <a href="/hamachi-download/">download page</a></p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamachi Version History and Current Build</title>
+<meta name="description" content="Hamachi version history for the Windows build: current 2.4.0.79, how the version is read from the installer, and how this page tracks vendor releases.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/changelog/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hamachi Version History and Current Build">
+<meta property="og:description" content="Hamachi version history for the Windows build: current 2.4.0.79, how the version is read from the installer, and how this page tracks vendor releases.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/changelog/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="crumbs"><a href="/hamachi-download/">Hamachi download</a> / Version history</nav>
+<h1>Hamachi version history</h1>
+<p class="sub">The Windows build, read straight from the installer's own version resource.</p>
+
+<h2>Current build</h2>
+<table>
+  <thead><tr><th>Version</th><th>Published</th><th>Size</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>2.4.0.79</strong></td><td>2026-10-01</td><td>14.1 MB</td><td>Current build on the vendor CDN</td></tr>
+    <tr><td>2.3.x</td><td>—</td><td>—</td><td>Previous stable line</td></tr>
+  </tbody>
+</table>
+
+<h2>Where the version number comes from</h2>
+<p>LogMeIn does not publish a version number on the download page and does not maintain a public changelog. The number above is read from the installer itself: the <code>ProductVersion</code> resource of <code>EngineEXE_x64</code> inside <code>hamachi.msi</code>. That makes it checkable rather than assumed.</p>
+
+<h2>How this page stays current</h2>
+<ul>
+  <li>The vendor CDN response headers (<code>Last-Modified</code>, <code>content-length</code>) are polled weekly.</li>
+  <li>When the installer changes, the version resource is re-read and this table, the <a href="/hamachi-download/">download page</a> and the <a href="/hamachi-download/sha256/">checksum</a> are updated together.</li>
+  <li>The release tag <code>v2.4.0.79</code> carries <code>SHA256SUMS.txt</code> for the build it describes.</li>
+</ul>
+<p>Most download pages in this niche sit on versions that are a year old. Keeping the number honest is the whole point of this page.</p>
+
+<div class="note"><strong>Next:</strong> <a href="/hamachi-download/sha256/">verify the checksum</a> · <a href="/hamachi-download/install/">install the current build</a></div>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+<footer>
+  <p>Hamachi 2.4.0.79 · Windows MSI · SHA-256 5c672c9a… · <a href="/hamachi-download/">download page</a></p>
+</footer>
+</div>
+</body>
+</html>

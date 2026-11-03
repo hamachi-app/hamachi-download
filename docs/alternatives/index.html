@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamachi Alternatives: Tailscale, ZeroTier, Radmin VPN</title>
+<meta name="description" content="How Hamachi compares with Tailscale, ZeroTier and Radmin VPN for building a private network between Windows machines, and which one fits LAN games or remote access.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/alternatives/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hamachi Alternatives: Tailscale, ZeroTier, Radmin VPN">
+<meta property="og:description" content="How Hamachi compares with Tailscale, ZeroTier and Radmin VPN for building a private network between Windows machines, and which one fits LAN games or remote access.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/alternatives/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="crumbs"><a href="/hamachi-download/">Hamachi download</a> / Alternatives</nav>
+<h1>Hamachi alternatives compared</h1>
+<p class="sub">Same job, different trade-offs: addressing, free tier and how much the tool assumes about your skill level.</p>
+
+<h2>What all four do</h2>
+<p>Each builds a private network between machines that are not on the same physical LAN, without asking you to open ports or reconfigure a router. They differ in addressing model, in what they assume about the operator, and in what the free tier allows.</p>
+
+<table>
+  <thead><tr><th>Tool</th><th>Approach</th><th>Platforms</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Hamachi</strong></td>
+      <td>Overlay network with its own <code>25.x.x.x</code> addresses, brokered connections with direct P2P when NAT allows</td>
+      <td>Windows, macOS, Linux</td>
+      <td>Free tier up to 5 devices; gateway mode on paid plans. Long-lived and familiar to people who ran LAN games years ago.</td>
+    </tr>
+    <tr>
+      <td><strong>Tailscale</strong></td>
+      <td>WireGuard-based mesh with identity-based access</td>
+      <td>Windows, macOS, Linux, mobile</td>
+      <td>Modern default for teams. Access rules are tied to accounts and devices rather than to a shared network password.</td>
+    </tr>
+    <tr>
+      <td><strong>ZeroTier</strong></td>
+      <td>Virtual layer-2/3 network with its own addressing</td>
+      <td>Windows, macOS, Linux, mobile</td>
+      <td>Closer to Hamachi in feel — you manage networks and memberships. Good when software expects a real broadcast domain.</td>
+    </tr>
+    <tr>
+      <td><strong>Radmin VPN</strong></td>
+      <td>Overlay network aimed at the same audience</td>
+      <td>Windows</td>
+      <td>Windows-only, free, simple. A common swap when the 5-device Hamachi limit is the blocker.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Choosing</h2>
+<ul>
+  <li><strong>Old LAN games and SMB shares</strong> — Hamachi or ZeroTier. Both present a network the game can browse.</li>
+  <li><strong>Access control that survives staff changes</strong> — Tailscale, because permissions follow identity instead of a shared password.</li>
+  <li><strong>Windows-only and free</strong> — Radmin VPN is the shortest path.</li>
+  <li><strong>Reaching devices that cannot run a client</strong> — gateway mode on Hamachi, or a subnet router in Tailscale.</li>
+</ul>
+
+<h2>Switching away from Hamachi</h2>
+<p>Nothing about the network is proprietary to the client: peers talk over ordinary IP, so a share or an RDP target keeps working as soon as the new overlay hands out addresses. The part that does not transfer is the network ID and password model — every alternative above manages membership differently.</p>
+
+<div class="note"><strong>Next:</strong> <a href="/hamachi-download/">download Hamachi</a> · <a href="/hamachi-download/virtual-lan/">what a virtual LAN is</a></div>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+<footer>
+  <p>Hamachi 2.4.0.79 · Windows MSI · SHA-256 5c672c9a… · <a href="/hamachi-download/">download page</a></p>
+</footer>
+</div>
+</body>
+</html>

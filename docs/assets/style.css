@@ -1,0 +1,31 @@
+  :root{--bg:#0b0f14;--card:#141a22;--line:#232c38;--fg:#e8eef6;--mut:#8fa1b5;--acc:#00a86b}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+  h1{font-size:32px;line-height:1.25;margin:0 0 12px}
+  h2{font-size:21px;margin:40px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  h3{font-size:17px;margin:24px 0 6px}
+  p{color:#c6d2df;margin:0 0 14px}
+  .sub{color:var(--mut);font-size:15px;margin-bottom:26px}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:8px;font-size:17px}
+  .cta:hover{filter:brightness(1.12)}
+  .meta{display:grid;grid-template-columns:180px 1fr;gap:6px 18px;margin:26px 0;font-size:15px}
+  .meta dt{color:var(--mut)}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--mut);font-weight:600}
+  code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px}
+  pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;overflow:auto}
+  code{background:var(--card);padding:2px 5px;border-radius:4px;word-break:break-all}
+  .note{background:var(--card);border-left:3px solid var(--acc);padding:14px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+  a{color:#4cc2ff}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+  @media(max-width:520px){.meta{grid-template-columns:1fr}h1{font-size:26px}}
+.crumbs{font-size:13px;color:var(--mut);margin-bottom:18px}
+.crumbs a{color:var(--mut)}
+nav.pages{margin-top:52px;padding-top:18px;border-top:1px solid var(--line)}
+nav.pages h2{font-size:17px;margin:0 0 12px;border:0;padding:0}
+nav.pages ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:15px}
+nav.pages a{color:#4cc2ff}
+footer a{color:var(--mut)}
+@media(max-width:520px){nav.pages ul{grid-template-columns:1fr}}
