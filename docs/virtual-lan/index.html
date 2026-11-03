@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a Virtual LAN Is and How Hamachi Builds One</title>
+<meta name="description" content="How Hamachi turns the internet into a virtual LAN: 25.x.x.x addressing, relay and direct peer-to-peer paths, and what actually works over it.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/virtual-lan/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="What a Virtual LAN Is and How Hamachi Builds One">
+<meta property="og:description" content="How Hamachi turns the internet into a virtual LAN: 25.x.x.x addressing, relay and direct peer-to-peer paths, and what actually works over it.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/virtual-lan/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="crumbs"><a href="/hamachi-download/">Hamachi download</a> / Virtual LAN</nav>
+<h1>Hamachi virtual LAN, explained</h1>
+<p class="sub">Peers behave like machines on one switch — without port forwarding or router changes.</p>
+
+<h2>The idea</h2>
+<p>A local network works because every machine can reach every other machine directly and has an address it can trust. Hamachi reproduces that over the internet: each machine in your network receives an address in the <code>25.x.x.x</code> range, and the client moves packets between peers as if they shared a switch. Applications never learn that the peer is on another continent.</p>
+
+<h2>How the packets travel</h2>
+<ul>
+  <li><strong>Brokered connection.</strong> Peers find each other through LogMeIn's infrastructure, so no inbound port has to be open on either side.</li>
+  <li><strong>Direct peer-to-peer.</strong> When both NATs allow it, traffic moves directly between the machines and the relay is not in the path.</li>
+  <li><strong>Relay.</strong> When a direct path cannot be established, traffic is relayed. It works, but latency and throughput are worse — a relayed link is the usual explanation for "Hamachi feels slow".</li>
+</ul>
+
+<h2>What actually works over it</h2>
+<ul>
+  <li><strong>LAN games.</strong> Titles that only browse the local subnet see the Hamachi network as one.</li>
+  <li><strong>SMB file sharing.</strong> <code>\\25.x.x.x\share</code> behaves like any UNC path.</li>
+  <li><strong>Remote Desktop.</strong> RDP to a peer's Hamachi address.</li>
+  <li><strong>IP cameras and lab gear.</strong> Devices with no public IP and no way to configure one.</li>
+  <li><strong>Gateway mode.</strong> One peer routes a whole subnet, so you reach machines that have no Hamachi client at all. This is a paid-plan feature.</li>
+</ul>
+
+<h2>What it is not</h2>
+<p>It is not a privacy VPN. Traffic between peers is not routed through an exit node in another country and does not change your public IP. It is a private network between machines you invited, not a tunnel for browsing.</p>
+
+<h2>Limits worth knowing</h2>
+<p>The free tier allows up to 5 devices in a network. Larger networks and gateway features require a subscription. Addresses are assigned by the client and are stable for a given machine while it stays in the network.</p>
+
+<div class="note"><strong>Next:</strong> <a href="/hamachi-download/network-setup/">create or join a network</a> · <a href="/hamachi-download/alternatives/">compare with other mesh VPNs</a></div>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+<footer>
+  <p>Hamachi 2.4.0.79 · Windows MSI · SHA-256 5c672c9a… · <a href="/hamachi-download/">download page</a></p>
+</footer>
+</div>
+</body>
+</html>

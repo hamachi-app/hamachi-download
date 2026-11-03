@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create or Join a Hamachi Network</title>
+<meta name="description" content="Create a Hamachi network or join an existing one: network ID and password, peer addresses, mesh versus gateway, and what to check when peers do not appear.">
+<link rel="canonical" href="https://hamachi-app.github.io/hamachi-download/network-setup/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="msvalidate.01" content="1CE37DBBDDB5806250498F14E7F60E3E" />
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create or Join a Hamachi Network">
+<meta property="og:description" content="Create a Hamachi network or join an existing one: network ID and password, peer addresses, mesh versus gateway, and what to check when peers do not appear.">
+<meta property="og:url" content="https://hamachi-app.github.io/hamachi-download/network-setup/">
+<link rel="stylesheet" href="/hamachi-download/assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="crumbs"><a href="/hamachi-download/">Hamachi download</a> / Network setup</nav>
+<h1>Create or join a Hamachi network</h1>
+<p class="sub">Two clicks on the host, an ID and a password on the guest.</p>
+
+<h2>Create a network</h2>
+<ol>
+  <li>Open the client and sign in.</li>
+  <li><strong>Network → Create new network.</strong></li>
+  <li>Choose a network ID and a password. The ID is public-ish — anyone who knows it and the password can join, so treat the password as the actual secret.</li>
+  <li>The creating machine appears in the list with a <code>25.x.x.x</code> address.</li>
+</ol>
+
+<h2>Join a network</h2>
+<ol>
+  <li><strong>Network → Join existing network.</strong></li>
+  <li>Paste the network ID and enter the password.</li>
+  <li>The peer appears in the list once it has authenticated.</li>
+</ol>
+<p>Share the ID and password out of band. Do not paste them into a public chat — a network is only as private as its password.</p>
+
+<h2>Mesh or gateway</h2>
+<table>
+  <thead><tr><th>Mode</th><th>What it does</th><th>Plan</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Mesh</strong></td><td>Every machine with the client sees every other machine directly.</td><td>Free up to 5 devices</td></tr>
+    <tr><td><strong>Gateway</strong></td><td>One peer routes a whole subnet, so devices without a client become reachable.</td><td>Paid</td></tr>
+  </tbody>
+</table>
+
+<h2>When a peer does not appear</h2>
+<ul>
+  <li>The other machine is offline, or signed in to a different LogMeIn account.</li>
+  <li>The network ID has a typo — the ID and the password are both case-sensitive.</li>
+  <li>A local firewall blocks the client's traffic. Allow it on private networks.</li>
+  <li>The peer shows as relayed rather than direct: it works, but expect higher latency. See <a href="/hamachi-download/virtual-lan/">how packets travel</a>.</li>
+</ul>
+
+<h2>Check the link</h2>
+<p>From one peer, ping the other's <code>25.x.x.x</code> address. A reply means the overlay is working and any remaining problem is in the application, not in the network. Then try the actual service — an SMB share or an RDP session — because ICMP and TCP can be treated differently by local firewalls.</p>
+
+<div class="note"><strong>Next:</strong> <a href="/hamachi-download/install/">installation steps</a> · <a href="/hamachi-download/virtual-lan/">what a virtual LAN is</a></div>
+
+<nav class="pages">
+  <h2>More on Hamachi</h2>
+  <ul>
+    <li><a href="/hamachi-download/">Hamachi download</a></li>
+    <li><a href="/hamachi-download/install/">How to install Hamachi</a></li>
+    <li><a href="/hamachi-download/virtual-lan/">What a virtual LAN is</a></li>
+    <li><a href="/hamachi-download/network-setup/">Create or join a network</a></li>
+    <li><a href="/hamachi-download/sha256/">Verify the SHA-256</a></li>
+    <li><a href="/hamachi-download/changelog/">Version history</a></li>
+    <li><a href="/hamachi-download/alternatives/">Hamachi alternatives</a></li>
+  </ul>
+</nav>
+<footer>
+  <p>Hamachi 2.4.0.79 · Windows MSI · SHA-256 5c672c9a… · <a href="/hamachi-download/">download page</a></p>
+</footer>
+</div>
+</body>
+</html>

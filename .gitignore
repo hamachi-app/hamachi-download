@@ -1,0 +1,6 @@
+profile/
+__pycache__/
+*.pyc
+INSTALL.md
+repo-meta.txt
+push.sh

@@ -1,0 +1,8 @@
+# Файлы, которые не должны попадать в автоматические архивы релиза
+# (Source code .zip / .tar.gz). Сам сайт это не затрагивает — GitHub Pages
+# раздаётся из ветки, а не из архива.
+
+.gitattributes            export-ignore
+.gitignore                export-ignore
+RELEASE_NOTES_v2.4.0.79.md export-ignore
+docs/                     export-ignore
